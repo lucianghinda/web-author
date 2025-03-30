@@ -13,6 +13,12 @@
 - RuboCop specific file: `bundle exec rubocop path/to/file.rb`
 - RuboCop auto-fix: `bundle exec rubocop -A`
 
+## General Approach
+
+- Whenever you implement a request, I want you to split it in smaller meaningful steps. This will help you to better understand the problem and to write more maintainable code. Additionally, it will make your code easier to test and debug.
+- Each change should be small and focused on solving a specific problem. This will make it easier to track down bugs and to make changes in the future.
+- Each change should be thoroughly tested.
+
 ## Code Style Guidelines
 
 ### Ruby Style

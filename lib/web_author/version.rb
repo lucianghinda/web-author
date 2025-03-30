@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module Webauthor
+module WebAuthor
   VERSION = '0.1.0'
 end

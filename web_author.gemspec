@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/webauthor/version'
+require_relative 'lib/web_author/version'
 
-Gem::Specification.new do |spec|
-  spec.name = 'webauthor'
-  spec.version = Webauthor::VERSION
+Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
+  spec.name = 'web_author'
+  spec.version = WebAuthor::VERSION
   spec.authors = ['Lucian Ghinda']
   spec.email = ['1407869+lucianghinda@users.noreply.github.com']
 
@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency 'nokogiri', '~> 1.15'
   spec.add_dependency 'zeitwerk', '~> 2.6'
 
   # For more information and examples about making a new gem, check out our

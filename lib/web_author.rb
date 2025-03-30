@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 require 'zeitwerk'
+require 'nokogiri'
+require 'net/http'
+require 'uri'
 
 loader = Zeitwerk::Loader.for_gem
 loader.setup
 
-module Webauthor
+module WebAuthor
   class Error < StandardError; end
-  # Your code goes here...
 end
