@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'webauthor/version'
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module Webauthor
   class Error < StandardError; end
