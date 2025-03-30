@@ -1,7 +1,8 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-minitest
   - rubocop-rubycw
+  - rubocop-rake
 
 AllCops:
   TargetRubyVersion: 3.4

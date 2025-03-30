@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "webauthor/version"
+require_relative 'webauthor/version'
 
 module Webauthor
   class Error < StandardError; end
