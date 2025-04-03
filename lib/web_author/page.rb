@@ -21,8 +21,7 @@ module WebAuthor
     def author
       fetch_page_content unless page_content
 
-      meta_author = T.must(page_content).at_css('meta[name="author"]')
-      meta_author&.attribute('content')&.value
+      Author::Strategies::AuthorFromMeta.new(T.must(page_content)).author
     end
 
     private
