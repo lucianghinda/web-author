@@ -1,23 +1,33 @@
 # frozen_string_literal: true
+# typed: strict
 
 module WebAuthor
   class Page
-    attr_reader :url, :page_content
+    extend T::Sig
 
+    sig { returns(String) }
+    attr_reader :url
+
+    sig { returns(T.nilable(Nokogiri::XML::Document)) }
+    attr_reader :page_content
+
+    sig { params(url: String).void }
     def initialize(url:)
-      @url = url
-      @page_content = nil
+      @url = T.let(url, String)
+      @page_content = T.let(nil, T.nilable(Nokogiri::XML::Document))
     end
 
+    sig { returns(T.nilable(String)) }
     def author
       fetch_page_content unless page_content
 
-      meta_author = page_content.at_css('meta[name="author"]')
+      meta_author = T.must(page_content).at_css('meta[name="author"]')
       meta_author&.attribute('content')&.value
     end
 
     private
 
+      sig { returns(T.nilable(Nokogiri::XML::Document)) }
       def fetch_page_content
         uri = URI.parse(url)
         response = Net::HTTP.get_response(uri)

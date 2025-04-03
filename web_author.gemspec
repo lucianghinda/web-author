@@ -36,6 +36,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency 'nokogiri', '~> 1.15'
+  spec.add_dependency 'sorbet-runtime', '~> 0.5'
   spec.add_dependency 'zeitwerk', '~> 2.6'
 
   # For more information and examples about making a new gem, check out our
