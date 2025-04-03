@@ -2,6 +2,7 @@
 
 require 'zeitwerk'
 require 'nokogiri'
+require 'sorbet-runtime'
 require 'net/http'
 require 'uri'
 
