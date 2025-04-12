@@ -17,7 +17,7 @@
 
 - Whenever you implement a request, I want you to split it in smaller meaningful steps. This will help you to better understand the problem and to write more maintainable code. Additionally, it will make your code easier to test and debug.
 - Each change should be small and focused on solving a specific problem. This will make it easier to track down bugs and to make changes in the future.
-- Each change should be thoroughly tested.
+- Each change should be able to be committed independently and thoroughly tested.
 
 ## Code Style Guidelines
 
@@ -33,6 +33,7 @@
 - Prefer map over collect, inject over reduce
 - Use good names OOP objects and for method names
 - Use Data class for data immutable value objects when needed
+- Do not comment code. Make it easy to be understood via naming and code organisation
 
 ### Error Handling
 
@@ -51,3 +52,4 @@
   - DO NOT write "should be valid with valid attributes" for a booking test
   - Write instead, "booking is valid when using valid attributes."
   - Do not post comments about the structure of the test code. You should organise test code in Arrange, Act, Assert sections but the structure should be visible without any added comments.
+- Whenever a new file is created, you should create a corresponding test file using Minitest

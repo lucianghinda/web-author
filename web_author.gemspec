@@ -8,17 +8,17 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.authors = ['Lucian Ghinda']
   spec.email = ['1407869+lucianghinda@users.noreply.github.com']
 
-  spec.summary = 'TODO: Write a short summary, because RubyGems requires one.'
-  spec.description = 'TODO: Write a longer description or delete this line.'
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = 'Detect Author for a web page'
+  spec.description = 'This gem tried to detect author for a webpage based on various strategies'
+  spec.homepage = 'https://github.com/lucianghinda/web_author'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.4.0'
 
   spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = "TODO: Put your gem's public repo URL here."
-  spec.metadata['changelog_uri'] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata['source_code_uri'] = 'https://github.com/lucianghinda/web_author'
+  spec.metadata['changelog_uri'] = 'https://github.com/lucianghinda/web_author/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

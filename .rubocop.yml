@@ -333,6 +333,9 @@ Lint/SymbolConversion:
 Style/WordArray:
   Enabled: false
 
+Style/HashSlice:
+  Enabled: false # This is disabled because Hash#slice is not always compatible with Sorbet. Eg. Hash#slice(*ATTRIBUTES) does not work with unknown number of elements.
+
 Performance/RedundantMerge:
   Enabled: false
 
