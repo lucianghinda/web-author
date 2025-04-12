@@ -21,10 +21,23 @@ module WebAuthor
     def author
       fetch_page_content unless page_content
 
-      Author::Strategies::AuthorFromMeta.new(T.must(page_content)).author
+      STRATEGIES.each do |strategy_class|
+        author = strategy_class.new(T.must(page_content)).author
+        return author if author
+      end
+
+      nil
     end
 
     private
+
+      # The order of these strategies is important as it determines in case of conflicting data
+      # which strategy should be used first.
+      STRATEGIES = T.let([
+        WebAuthor::Author::Strategies::AuthorFromLdSchema,
+        WebAuthor::Author::Strategies::AuthorFromMeta
+      ].freeze, T::Array[T.class_of(WebAuthor::Author::Strategy)])
+      private_constant :STRATEGIES
 
       sig { returns(T.nilable(Nokogiri::XML::Document)) }
       def fetch_page_content
