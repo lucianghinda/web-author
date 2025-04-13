@@ -72,7 +72,7 @@ end
 
 ## How It Works
 
-WebAuthor uses a strategy pattern to extract author information:
+WebAuthor uses a strategy to extract author information:
 
 1. First, it tries to find author information in JSON-LD schema (often found in `<script type="application/ld+json">` tags)
 2. If no author is found in JSON-LD, it looks for a meta tag with the name "author" (`<meta name="author" content="Author Name">`)
@@ -136,6 +136,88 @@ Multiple authors:
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
+
+### Development Workflow
+
+#### Type Checking with Sorbet
+
+This project uses [Sorbet](https://sorbet.org/) for static type checking. To run the type checker:
+
+```bash
+$ bin/type-check
+```
+
+or directly:
+
+```bash
+$ bundle exec srb tc
+```
+
+#### Running Tests
+
+Run all tests using:
+
+```bash
+$ bundle exec rake test
+```
+
+Run a specific test file:
+
+```bash
+$ bundle exec ruby -Ilib:test test/web_author/page_test.rb
+```
+
+#### Code Style and Linting
+
+This project follows Ruby style guidelines enforced by RuboCop. Run the linter with:
+
+```bash
+$ bundle exec rubocop
+```
+
+Auto-fix issues when possible:
+
+```bash
+$ bundle exec rubocop -A
+```
+
+#### Running All Checks
+
+The default Rake task runs both tests and RuboCop:
+
+```bash
+$ bundle exec rake
+```
+
+### Working with Sorbet
+
+WebAuthor uses Sorbet for static type checking. When adding new code:
+
+1. Add comment on top of the file: `# typed: strict`
+2. Add type signatures to methods using `sig` blocks
+3. Run `bin/type-check` to verify type safety
+
+Example of typed code:
+
+```ruby
+extend T::Sig
+
+sig { params(url: String).void }
+def initialize(url:)
+  @url = T.let(url, String)
+  @content = T.let(nil, T.nilable(String))
+end
+
+sig { returns(T.nilable(String)) }
+def author
+  # method implementation
+end
+```
+
+### Adding a new strategy
+
+You should create a new class that inherits from `WebAuthor::Strategy` and implement the `author` method.
+You will notice that you will get the `document` from the initializer as every strategy receives it. This is a `Nokogiri::XML::Document` object.
 
 ## Contributing
 
