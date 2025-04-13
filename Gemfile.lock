@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    web_author (0.1.0)
+    web-author (0.1.0)
       nokogiri (~> 1.15)
       sorbet-runtime (~> 0.5)
       zeitwerk (~> 2.6)
@@ -159,7 +159,7 @@ DEPENDENCIES
   sorbet (~> 0.5)
   sorbet-runtime (~> 0.5)
   tapioca
-  web_author!
+  web-author!
   webmock (~> 3.19)
 
 BUNDLED WITH
