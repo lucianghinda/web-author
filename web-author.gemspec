@@ -9,7 +9,8 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.email = ['lucian@shortruby.com']
 
   spec.summary = 'Detect Author for a web page'
-  spec.description = 'This gem tried to detect author for a webpage based on various strategies'
+  spec.description = 'This gem tries to detect author for a webpage based on various strategies.' \
+                     'Currently supports JSON-LD and meta author tag'
   spec.homepage = 'https://github.com/lucianghinda/web-author'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.4.0'
