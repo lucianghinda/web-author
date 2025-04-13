@@ -6,7 +6,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.name = 'web-author'
   spec.version = WebAuthor::VERSION
   spec.authors = ['Lucian Ghinda']
-  spec.email = ['1407869+lucianghinda@users.noreply.github.com']
+  spec.email = ['lucian@shortruby.com']
 
   spec.summary = 'Detect Author for a web page'
   spec.description = 'This gem tried to detect author for a webpage based on various strategies'
