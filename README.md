@@ -15,7 +15,7 @@ WebAuthor is a Ruby gem that extracts author information from web pages using mu
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'web_author'
+gem 'web-author'
 ```
 
 And then execute:
@@ -27,7 +27,7 @@ $ bundle install
 Or install it yourself as:
 
 ```bash
-$ gem install web_author
+$ gem install web-author
 ```
 
 ## Usage
